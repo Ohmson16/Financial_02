@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Family Budget Tracker</h1>
+
+        <!-- Income Section -->
+        <h2>Income Sources</h2>
+        <table class="budget-table" id="income-table">
+            <thead>
+                <tr>
+                    <th>Source</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" placeholder="Income Source"></td>
+                    <td><input type="number" placeholder="Amount" min="0"></td>
+                    <td><input type="date"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="addIncome()">Add Income Source</button>
+
+        <!-- Expenses Section -->
+        <h2>Expenses</h2>
+        <table class="budget-table" id="expenses-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" placeholder="Expense Category"></td>
+                    <td><input type="number" placeholder="Amount" min="0"></td>
+                    <td><input type="date"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="addExpense()">Add Expense</button>
+
+        <!-- Savings Goals Section -->
+        <h2>Savings Goals</h2>
+        <table class="budget-table" id="savings-table">
+            <thead>
+                <tr>
+                    <th>Goal</th>
+                    <th>Target Amount</th>
+                    <th>Current Savings</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" placeholder="Savings Goal"></td>
+                    <td><input type="number" placeholder="Target Amount" min="0"></td>
+                    <td><input type="number" placeholder="Current Savings" min="0"></td>
+                    <td><input type="date"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="addSavingsGoal()">Add Savings Goal</button>
+
+        <!-- Monthly Overview Section -->
+        <h2>Monthly Overview</h2>
+        <div class="summary">
+            <p>Total Income: <span id="total-income">0</span></p>
+            <p>Total Expenses: <span id="total-expenses">0</span></p>
+            <p>Total Savings: <span id="total-savings">0</span></p>
+            <p>Net Balance: <span id="net-balance">0</span></p>
+        </div>
+        
+        <button class="calculate-btn" onclick="calculateTotals()">Calculate Totals</button>
+
+        <!-- Search and Filter Section -->
+        <h2>Filter Expenses</h2>
+        <input type="text" id="search-expenses" placeholder="Search by category..." onkeyup="filterExpenses()">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
